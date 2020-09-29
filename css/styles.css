@@ -38,3 +38,245 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+ul {
+  list-style: none;
+}
+
+/********** 
+ * HEADER *
+ **********/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 5.5rem;
+  background: var(--black);
+  padding: 0 1.5rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.header-logo img {
+  width: 9rem;
+}
+
+.menu-mobile {
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  border: 2px solid white;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+
+.profile svg {
+  width: 1.6rem;
+  fill: var(--white);
+}
+
+.profile:hover {
+  border-color: var(--green1);
+}
+
+.profile:hover > svg {
+  fill: var(--green1);
+}
+
+/* Menu */
+.toggler {
+  width: 2rem;
+  height: 3rem;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.hamburger-menu {
+  width: 2rem;
+  height: 3rem;
+  position: absolute;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-menu div {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger menu lines */
+.hamburger-menu div,
+.hamburger-menu div:before,
+.hamburger-menu div:after {
+  content: "";
+  height: 0.3rem;
+  width: 100%;
+  background: var(--white);
+  border-radius: 1rem;
+}
+
+/* Top hamburger menu line */
+.hamburger-menu div:before {
+  position: absolute;
+  top: -0.7rem;
+}
+
+/* Bottom hamburger menu line */
+.hamburger-menu div:after {
+  position: absolute;
+  top: 0.7rem;
+}
+
+/* Rotate the hamburger menu when it is clicked */
+.toggler:checked + .hamburger-menu > div {
+  transform: rotate(135deg);
+}
+
+/* Rotates the top and bottom lines in the hamburger menu
+  This code will turn these lines from horizontal --- to vertical | */
+.toggler:checked + .hamburger-menu > div:before,
+.toggler:checked + .hamburger-menu > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Menu overlay */
+.menu-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  width: 0;
+  opacity: 0;
+  height: 100%;
+  background: var(--black);
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  padding: 4rem;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.background-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+.toggler:checked + .hamburger-menu + .menu > .background-overlay {
+  display: initial;
+}
+
+.toggler:checked + .hamburger-menu + .menu > .menu-overlay {
+  visibility: visible;
+  width: 88%;
+  opacity: 1;
+}
+
+/* This will put the toggler(checkbox) on top on the hamburger menu */
+.toggler:checked {
+  z-index: 1001;
+}
+
+/* This line puts the hamburger menu on top of the overlay menu */
+.toggler:checked + .hamburger-menu {
+  z-index: 1000;
+}
+
+.menu-overlay li,
+.menu-overlay-logo {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+}
+
+.menu-overlay li {
+  color: var(--white);
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.toggler:checked + .hamburger-menu + .menu > .menu-overlay li,
+.toggler:checked + .hamburger-menu + .menu > .menu-overlay .menu-overlay-logo {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* This will the li items to slide from left to right */
+.menu-overlay li:nth-child(1) {
+  transition: transform 0.1s ease;
+}
+
+.menu-overlay li:nth-child(2) {
+  transition: transform 0.2s ease;
+}
+
+.menu-overlay li:nth-child(3) {
+  transition: transform 0.3s ease;
+}
+
+.menu-overlay li:nth-child(4) {
+  transition: transform 0.4s ease;
+}
+
+.menu-overlay li:nth-child(5) {
+  transition: transform 0.5s ease;
+}
+
+.menu-overlay li:nth-child(6) {
+  transition: transform 0.6s ease;
+}
+
+.menu-overlay-logo {
+  transition: transform 0.6s ease;
+}
+
+/* Change links color on hover */
+.menu-overlay li a:hover {
+  color: var(--blue);
+}
+
+/* Separator */
+.menu-overlay li:nth-child(4) {
+  width: 2rem;
+  height: 0.15rem;
+  margin: 4rem 0;
+  background: var(--white);
+}
+
+/* Selects last two li elements */
+.menu-overlay li:nth-last-child(-n + 2) {
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+.menu-overlay li:last-child {
+  margin-top: 2rem;
+}
+
+.menu-overlay-logo img {
+  width: 9rem;
+  cursor: pointer;
+}
