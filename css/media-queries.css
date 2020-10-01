@@ -1,0 +1,41 @@
+/* These styles will be applied to screens that have a width of at least 992px */
+@media screen and (min-width: 992px) {
+  header {
+    background: rgba(0, 0, 0, 0.6);
+    height: 8rem;
+  }
+
+  .header-container {
+    max-width: 97rem;
+  }
+
+  .header-logo img {
+    width: 13rem;
+  }
+
+  .nav-desktop {
+    display: flex;
+  }
+
+  .nav-mobile {
+    display: none;
+  }
+
+  /* Circle around the profile icon */
+  .profile {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  /* Profile icon */
+  .profile svg {
+    width: 2rem;
+  }
+}
+
+/* These styles will be applied to screens that have a width of at least 1200px */
+@media screen and (min-width: 1200px) {
+  .header-container {
+    max-width: 117rem;
+  }
+}
