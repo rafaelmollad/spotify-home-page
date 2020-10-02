@@ -29,6 +29,37 @@
     position: absolute;
     bottom: 1.2rem;
   }
+
+  /* ALBUMS */
+  .albums-container {
+    width: 75rem;
+    margin: 0 auto;
+  }
+
+  .albums-container {
+    padding: 0 1.5rem;
+  }
+
+  .albums-cards-container {
+    flex-wrap: wrap;
+  }
+
+  .album {
+    min-width: 0;
+    width: 33.33%;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .album:first-child,
+  .album:last-child {
+    padding: 0;
+  }
+
+  /* Looking for music? */
+  .albums-content h2 {
+    font-size: 4rem;
+  }
 }
 
 /* These styles will be applied to screens that have a width of at least 992px */
