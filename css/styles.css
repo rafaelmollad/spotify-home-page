@@ -663,6 +663,7 @@ footer {
 
 .footer-nav {
   padding: 0 1.5rem;
+  margin: 0 auto;
 }
 
 .logo-footer {
@@ -769,6 +770,10 @@ footer {
 
 .bottom-links ul li {
   margin-right: 2.6rem;
+  padding: 1rem 0;
+}
+
+.bottom-links span {
   padding: 1rem 0;
 }
 
